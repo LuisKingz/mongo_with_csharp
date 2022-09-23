@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_APP_CRUD"
         mc:Ignorable="d"
-        Title="CRUD MONGO WITH C#" Height="450" Width="800">
+        Title="CRUD MONGO WITH C#" Height="500" Width="800">
     <Grid Margin="0,0,1,0">
-        <DataGrid x:Name="DataTable" Margin="48,62,375,54" MouseUp="DataTable_MouseUp"/>
+        <DataGrid x:Name="DataTable" Margin="48,62,355,54" MouseUp="DataTable_MouseUp" IsReadOnly="True"/>
         <Label Name="LbId" Margin="477,82,260,328" Content="Id"/> 
         <Label Name="LbPrice" Margin="477,214,260,196" Content="Price"/>  
         <Label Name="LbTitle" Margin="477,148,260,262" Content="title"/>

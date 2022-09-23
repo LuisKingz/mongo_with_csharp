@@ -32,9 +32,6 @@ namespace WPF_APP_CRUD
             List<Book> list = collection.AsQueryable().ToList<Book>();
             DataTable.ItemsSource = list;
             Book b = (Book)DataTable.Items.GetItemAt(0);
-            tbxId.Text = b.Id.ToString();
-            tbxTitle.Text = b.Title;
-            tbxPrice.Text = b.Price.ToString();
 
         }
         public MainWindow()
@@ -45,10 +42,30 @@ namespace WPF_APP_CRUD
 
         private void DataTable_MouseUp(object sender, MouseButtonEventArgs e)
         {
-            Book b = (Book)DataTable.SelectedItem; ;
-            tbxId.Text = b.Id.ToString();
-            tbxTitle.Text = b.Title;
-            tbxPrice.Text = b.Price.ToString();
+            Book b = (Book)DataTable.SelectedItem;
+
+            try
+            {
+                if (b != null)
+                {
+                    tbxId.Text = b.Id.ToString();
+                    tbxTitle.Text = b.Title;
+                    tbxPrice.Text = b.Price.ToString();
+                }
+                else
+                {
+                    tbxId.Text = "Sin datos";
+                    tbxTitle.Text = "Sin datos";
+                    tbxPrice.Text ="Sin datos";
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrio un error...");
+            }
+
+
         }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
