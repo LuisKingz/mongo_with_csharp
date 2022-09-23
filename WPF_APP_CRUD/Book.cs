@@ -8,7 +8,7 @@ namespace WPF_APP_CRUD
 {
     class Book
     {
-        public Book(string price, string title)
+        public Book(int price, string title)
         {
             this.Title = title;
             this.Price = price;
@@ -21,6 +21,6 @@ namespace WPF_APP_CRUD
         public string Title { get; set; }
 
         [BsonElement("price")]
-        public string Price { get; set; }
+        public int Price { get; set; }
     }
 }
